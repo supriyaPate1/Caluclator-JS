@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .buttons{
+            margin-top:100px;
+            background-color:black;
+           
+            
+        }
+        .buttons td{
+            border:black;
+            background-color:aquamarine;
+            text-align:center;
+            height:500%;
+            padding: 10px 20px 20px 20px;
+            /* margin: 50px 50px; */
+            /* display:inline; */
+        }
+        .buttons input{
+            width:120%;
+            padding: 10px 15px 8px 10px;
+            /* margin: 10px 5px 10px 10px; */
+            height:50%;
+        }
+        #res{
+            width:90%;
+            padding-right:8%;
+            padding-left:1%
+        }
+        
+        
+    </style>
+</head>
+<center>
+<body>
+   <table class="buttons">
+    <tr class="display">
+        <td colspan="3"><input type="text" id="res"> </td>
+        <td><input type="button" value="C" onclick="clear1()"></button></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="1" onclick="display('1')"></td>
+        <td><input type="button" value="2" onclick="display('2')"></td>
+        <td><input type="button" value="3" onclick="display('3')"></td>
+        <td><input type="button" value="+" onclick="display('+')"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="4" onclick="display('4')"></td>
+        <td><input type="button" value="5" onclick="display('5')"></td>
+        <td><input type="button" value="6" onclick="display('6')"></td>
+        <td><input type="button" value="-" onclick="display('-')"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="7" onclick="display('7')"></td>
+        <td><input type="button" value="8" onclick="display('8')"></td>
+        <td><input type="button" value="9" onclick="display('9')"></td>
+        <td><input type="button" value="*" onclick="display('*')"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="." onclick="display('.')"></td>
+        <td><input type="button" value="0" onclick="display('0')"></td>
+        <td><input type="button" value="=" onclick="calculate('=')"></td>
+        <td><input type="button" value="/" onclick="display('/')"></td>
+    </tr>
+   </table>
+</div>
+<script>
+
+    //function to display value
+    function display(val){
+          document.getElementById("res").value+=val; 
+    }
+
+//function to clear display area when presssed C
+    function clear1(){
+    document.getElementById("res").value="";
+
+
+    }
+
+   // Function to perform calculation
+   function calculate(){
+   let input= document.getElementById("res").value;   // getting the value from calculator
+   let calc=eval(input);      // calculating the expression entered using eval func
+   document.getElementById("res").value=calc;
+   }
+
+</script>
+</body>
+</center>
+</html>
